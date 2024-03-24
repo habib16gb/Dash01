@@ -9,6 +9,7 @@ import { IconType } from "react-icons";
 
 type tyChildrenLink = {
   name: string;
+
 };
 
 type tyLink = {

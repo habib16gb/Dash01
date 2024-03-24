@@ -7,11 +7,28 @@ interface Props {
 interface inDashContext {
   activeMenu: boolean;
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+  isClicked: tyState;
+  setIsClicked: React.Dispatch<React.SetStateAction<tyState>>;
+  handleClick: (clicked: enClicked) => void
 }
 
 const DashContext = createContext<inDashContext | null>(null);
 
-const initialState = {
+export enum enClicked  {
+  CHAT = 'chat',
+  CART = 'cart',
+  USER_PROFILE = 'userProfile',
+  NOTIFICATION = 'notification'
+}
+
+type tyState = {
+  chat: boolean,
+  cart: boolean,
+  userProfile: boolean,
+  notification: boolean,
+}
+
+const initialState: tyState = {
   chat: false,
   cart: false,
   userProfile: false,
@@ -20,8 +37,14 @@ const initialState = {
 
 export const DashContextProvider = ({ children }: Props) => {
   const [activeMenu, setActiveMenu] = useState(true);
+  const [isClicked, setIsClicked] = useState(initialState);
+
+  const handleClick = (clicked: enClicked) => {
+    setIsClicked({...initialState, [clicked]: true})
+  }
+
   return (
-    <DashContext.Provider value={{ activeMenu, setActiveMenu }}>
+    <DashContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick }}>
       {children}
     </DashContext.Provider>
   );

@@ -20,7 +20,7 @@ const Sidebar = () => {
             <Link
               to={"/"}
               className='items-center gap-3 ml-3 mt-4 flex text-xl font-extralight tracking-tight dark:text-white text-slate-900  '
-              onClick={() => {}}
+              onClick={() => setActiveMenu((prev) => !prev)}
             >
               <FaLaptopCode className='text-3xl' />
               <span>HabibDev</span>
