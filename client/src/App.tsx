@@ -2,9 +2,38 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import SettingsIcon from "@mui/icons-material/Settings";
+import { ChartCharts, Navbar, Sidebar } from "./components";
+import {
+  AnalyticsDashboard,
+  ApplicationCalendar,
+  ApplicationChat,
+  ApplicationColorPicker,
+  ApplicationCustomer,
+  ApplicationECommerce,
+  ApplicationEditor,
+  ApplicationInvoice,
+  ApplicationKanban,
+  ApplicationProfile,
+  ChartMap,
+  Components,
+  DefaultDashboard,
+  Formlayout,
+  FormMuiTable,
+  Formplugins,
+  FormValidation,
+  FormWizard,
+  PageAuthentication,
+  PageContactUs,
+  PageMaintenance,
+  Pagepricing,
+  WidgetChart,
+  WidgetData,
+} from "./pages";
+import WidgetStatistics from "./pages/WidgetStatistics";
+import FormReactTable from "./pages/FormReactTable";
 
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
@@ -21,10 +50,12 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white  '>
-              sidebare
+              <Sidebar />
             </div>
           ) : (
-            <div className='w-0 dark:bg-secondary-dark-bg'>sidebare w-0</div>
+            <div className='w-0 dark:bg-secondary-dark-bg'>
+              <Navbar />
+            </div>
           )}
           <div
             className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
@@ -32,73 +63,82 @@ const App = () => {
             }`}
           >
             <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full '>
-              navbar
+              <Navbar />
             </div>
           </div>
           <div>
             <Routes>
               {/* Dashboard */}
-              <Route path='/dashboard/default' element={"DefaultDashboard"} />
+              <Route path='/dashboard/default' element={<DefaultDashboard />} />
               <Route
                 path='/dashboard/analytics'
-                element={"AnalyticsDashboard"}
+                element={<AnalyticsDashboard />}
               />
-              <Route path='/components' element='Components' />
+              <Route path='/components' element={<Components />} />
 
               {/* Widgets */}
-              <Route path='/widgets/statistics' element={"WidgetStatistics"} />
-              <Route path='/widgets/data' element={"WidgetData"} />
-              <Route path='/widgets/chart' element={"WidgetChart"} />
+              <Route
+                path='/widgets/statistics'
+                element={<WidgetStatistics />}
+              />
+              <Route path='/widgets/data' element={<WidgetData />} />
+              <Route path='/widgets/chart' element={<WidgetChart />} />
 
               {/* Application */}
-              <Route path='/application/chat' element={"ApplicationChat"} />
+              <Route path='/application/chat' element={<ApplicationChat />} />
               <Route
                 path='/application/calendar'
-                element={"ApplicationCalendar"}
+                element={<ApplicationCalendar />}
               />
-              <Route path='/application/kanban' element={"ApplicationKanban"} />
+              <Route
+                path='/application/kanban'
+                element={<ApplicationKanban />}
+              />
               <Route
                 path='/application/customer'
-                element={"ApplicationCustomer"}
+                element={<ApplicationCustomer />}
               />
               <Route
                 path='/application/invoice'
-                element={"ApplicationInvoice"}
+                element={<ApplicationInvoice />}
               />
               <Route
                 path='/application/profile'
-                element={"ApplicationProfile"}
+                element={<ApplicationProfile />}
               />
               <Route
                 path='/application/colorPicker'
-                element={"ApplicationColorPicker"}
+                element={<ApplicationColorPicker />}
               />
-              <Route path='/application/editor' element={"ApplicationEditor"} />
+              <Route
+                path='/application/editor'
+                element={<ApplicationEditor />}
+              />
               <Route
                 path='/application/eCommerce'
-                element={"ApplicationECommerce"}
+                element={<ApplicationECommerce />}
               />
 
               {/* Forms & Tables */}
-              <Route path='/form/validation' element={"FormValidation"} />
-              <Route path='/form/wizard' element={"FormWizard"} />
-              <Route path='/form/layout' element={"Formlayout"} />
-              <Route path='/form/plugins' element={"Formplugins"} />
-              <Route path='/form/reactTable' element={"FormReactTable"} />
-              <Route path='/form/muiTable' element={"FormMuiTable"} />
+              <Route path='/form/validation' element={<FormValidation />} />
+              <Route path='/form/wizard' element={<FormWizard />} />
+              <Route path='/form/layout' element={<Formlayout />} />
+              <Route path='/form/plugins' element={<Formplugins />} />
+              <Route path='/form/reactTable' element={<FormReactTable />} />
+              <Route path='/form/muiTable' element={<FormMuiTable />} />
 
               {/* Charts & Map */}
-              <Route path='/chart/charts' element={"ChartCharts"} />
-              <Route path='/chart/map' element={"ChartMap"} />
+              <Route path='/chart/charts' element={<ChartCharts />} />
+              <Route path='/chart/map' element={<ChartMap />} />
 
               {/* Pages */}
               <Route
                 path='/pages/authentication'
-                element={"PageAuthentication"}
+                element={<PageAuthentication />}
               />
-              <Route path='/pages/maintenance' element={"PageMaintenance"} />
-              <Route path='/pages/contactUs' element={"PageContactUs"} />
-              <Route path='/pages/pricing' element={"Pagepricing"} />
+              <Route path='/pages/maintenance' element={<PageMaintenance />} />
+              <Route path='/pages/contactUs' element={<PageContactUs />} />
+              <Route path='/pages/pricing' element={<Pagepricing />} />
             </Routes>
           </div>
         </div>
