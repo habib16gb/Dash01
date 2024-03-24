@@ -1,11 +1,11 @@
 import { AiOutlineDashboard } from "react-icons/ai";
-import { IconType } from "react-icons/lib";
 import { TbComponents } from "react-icons/tb";
 import { CiDatabase } from "react-icons/ci";
 import { FcStatistics } from "react-icons/fc";
 import { FaRegChartBar } from "react-icons/fa";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { LuCalendarDays } from "react-icons/lu";
+import { IconType } from "react-icons";
 
 type tyChildrenLink = {
   name: string;

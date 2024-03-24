@@ -32,8 +32,11 @@ import {
 import WidgetStatistics from "./pages/WidgetStatistics";
 import FormReactTable from "./pages/FormReactTable";
 
+import { useStateContext } from "./contexts/ContextsProvider";
+
 const App = () => {
-  const activeMenu = true;
+  const { activeMenu } = useStateContext();
+
   return (
     <div>
       <BrowserRouter>
