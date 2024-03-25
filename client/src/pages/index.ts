@@ -24,3 +24,4 @@ export { default as Pagepricing } from "./Pagepricing";
 export { default as WidgetChart } from "./WidgetChart";
 export { default as WidgetData } from "./WidgetData";
 export { default as WedgetStatistics } from "./WidgetStatistics";
+export { default as Orders } from "./Orders";

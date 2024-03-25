@@ -9,24 +9,26 @@ interface inDashContext {
   setActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
   isClicked: tyState;
   setIsClicked: React.Dispatch<React.SetStateAction<tyState>>;
-  handleClick: (clicked: enClicked) => void
+  handleClick: (clicked: enClicked) => void;
+  screenSize: number;
+  setScreenSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const DashContext = createContext<inDashContext | null>(null);
 
-export enum enClicked  {
-  CHAT = 'chat',
-  CART = 'cart',
-  USER_PROFILE = 'userProfile',
-  NOTIFICATION = 'notification'
+export enum enClicked {
+  CHAT = "chat",
+  CART = "cart",
+  USER_PROFILE = "userProfile",
+  NOTIFICATION = "notification",
 }
 
 type tyState = {
-  chat: boolean,
-  cart: boolean,
-  userProfile: boolean,
-  notification: boolean,
-}
+  chat: boolean;
+  cart: boolean;
+  userProfile: boolean;
+  notification: boolean;
+};
 
 const initialState: tyState = {
   chat: false,
@@ -38,13 +40,24 @@ const initialState: tyState = {
 export const DashContextProvider = ({ children }: Props) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
+  const [screenSize, setScreenSize] = useState(undefined);
 
   const handleClick = (clicked: enClicked) => {
-    setIsClicked({...initialState, [clicked]: true})
-  }
+    setIsClicked({ ...initialState, [clicked]: true });
+  };
 
   return (
-    <DashContext.Provider value={{ activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick }}>
+    <DashContext.Provider
+      value={{
+        activeMenu,
+        setActiveMenu,
+        isClicked,
+        setIsClicked,
+        handleClick,
+        screenSize,
+        setScreenSize,
+      }}
+    >
       {children}
     </DashContext.Provider>
   );

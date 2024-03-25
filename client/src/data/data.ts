@@ -6,10 +6,10 @@ import { FaRegChartBar } from "react-icons/fa";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { LuCalendarDays } from "react-icons/lu";
 import { IconType } from "react-icons";
+import { MdOutlineShoppingCart } from "react-icons/md";
 
 type tyChildrenLink = {
   name: string;
-
 };
 
 type tyLink = {
@@ -23,6 +23,11 @@ interface inLinks {
   links: tyLink[];
 }
 
+interface inThemeColors {
+  name: string;
+  color: string;
+}
+
 export const links: inLinks[] = [
   {
     title: "Dashboard",
@@ -33,6 +38,15 @@ export const links: inLinks[] = [
         children: [{ name: "default" }, { name: "analytics" }],
       },
       { name: "Components", icon: TbComponents },
+    ],
+  },
+  {
+    title: "Pages",
+    links: [
+      {
+        name: "Orders",
+        icon: MdOutlineShoppingCart,
+      },
     ],
   },
   {
@@ -111,5 +125,32 @@ export const links: inLinks[] = [
       { name: "react table", icon: FcStatistics },
       { name: "mui react table", icon: FcStatistics },
     ],
+  },
+];
+
+export const themeColors: inThemeColors[] = [
+  {
+    name: "blue-theme",
+    color: "#1A97F5",
+  },
+  {
+    name: "green-theme",
+    color: "#03C9D7",
+  },
+  {
+    name: "purple-theme",
+    color: "#7352FF",
+  },
+  {
+    name: "red-theme",
+    color: "#FF5C8E",
+  },
+  {
+    name: "indigo-theme",
+    color: "#1E4DB7",
+  },
+  {
+    color: "#FB9678",
+    name: "orange-theme",
   },
 ];
