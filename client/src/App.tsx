@@ -36,28 +36,34 @@ import FormReactTable from "./pages/FormReactTable";
 import { useStateContext } from "./contexts/ContextsProvider";
 
 const App = () => {
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings } = useStateContext();
 
   return (
     <div>
       <BrowserRouter>
-        <div className='flex relative dark:bg-main-dark-bg '>
-          <div className='fixed right-4 bottom-4 z-50'>
-            <Tooltip title='settings' placement='top'>
-              <IconButton aria-label='settings' onClick={() => {}}>
+        <div className="flex relative dark:bg-main-dark-bg ">
+          <div className="fixed right-4 bottom-4 z-50">
+            <Tooltip title="settings" placement="top">
+              <button
+                aria-label="settings"
+                onClick={() => {
+                  console.log(themeSettings);
+                  setThemeSettings(true);
+                }}
+              >
                 <SettingsIcon
                   style={{ background: "blue" }}
-                  className='text-3xl rounded-full hover:drop-shadow-xl p-1 hover:bg-white text-white'
+                  className="text-3xl rounded-full hover:drop-shadow-xl p-1 hover:bg-white text-white"
                 />
-              </IconButton>
+              </button>
             </Tooltip>
           </div>
           {activeMenu ? (
-            <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white  '>
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white  ">
               <Sidebar />
             </div>
           ) : (
-            <div className='w-0 dark:bg-secondary-dark-bg'>
+            <div className="w-0 dark:bg-secondary-dark-bg">
               <Sidebar />
             </div>
           )}
@@ -66,94 +72,94 @@ const App = () => {
               activeMenu ? "md:ml-72" : "flex-1"
             }`}
           >
-            <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full '>
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
 
             <div>
-              <ThemeSettings />
+              {themeSettings && <ThemeSettings />}
               <Routes>
+                {/* Root */}
+                <Route path="/" element={<DefaultDashboard />} />
+
                 {/* Dashboard */}
+                <Route path="/Dashboard" element={<DefaultDashboard />} />
                 <Route
-                  path='/dashboard/default'
-                  element={<DefaultDashboard />}
-                />
-                <Route
-                  path='/dashboard/analytics'
+                  path="/dashboard/analytics"
                   element={<AnalyticsDashboard />}
                 />
-                <Route path='/components' element={<Components />} />
+                <Route path="/components" element={<Components />} />
 
                 {/* Pages */}
 
-                <Route path='/Orders' element={<Orders />} />
+                <Route path="/Orders" element={<Orders />} />
 
                 {/* Widgets */}
                 <Route
-                  path='/widgets/statistics'
+                  path="/widgets/statistics"
                   element={<WidgetStatistics />}
                 />
-                <Route path='/widgets/data' element={<WidgetData />} />
-                <Route path='/widgets/chart' element={<WidgetChart />} />
+                <Route path="/widgets/data" element={<WidgetData />} />
+                <Route path="/widgets/chart" element={<WidgetChart />} />
 
                 {/* Application */}
-                <Route path='/application/chat' element={<ApplicationChat />} />
+                <Route path="/application/chat" element={<ApplicationChat />} />
                 <Route
-                  path='/application/calendar'
+                  path="/application/calendar"
                   element={<ApplicationCalendar />}
                 />
                 <Route
-                  path='/application/kanban'
+                  path="/application/kanban"
                   element={<ApplicationKanban />}
                 />
                 <Route
-                  path='/application/customer'
+                  path="/application/customer"
                   element={<ApplicationCustomer />}
                 />
                 <Route
-                  path='/application/invoice'
+                  path="/application/invoice"
                   element={<ApplicationInvoice />}
                 />
                 <Route
-                  path='/application/profile'
+                  path="/application/profile"
                   element={<ApplicationProfile />}
                 />
                 <Route
-                  path='/application/colorPicker'
+                  path="/application/colorPicker"
                   element={<ApplicationColorPicker />}
                 />
                 <Route
-                  path='/application/editor'
+                  path="/application/editor"
                   element={<ApplicationEditor />}
                 />
                 <Route
-                  path='/application/eCommerce'
+                  path="/application/eCommerce"
                   element={<ApplicationECommerce />}
                 />
 
                 {/* Forms & Tables */}
-                <Route path='/form/validation' element={<FormValidation />} />
-                <Route path='/form/wizard' element={<FormWizard />} />
-                <Route path='/form/layout' element={<Formlayout />} />
-                <Route path='/form/plugins' element={<Formplugins />} />
-                <Route path='/form/reactTable' element={<FormReactTable />} />
-                <Route path='/form/muiTable' element={<FormMuiTable />} />
+                <Route path="/form/validation" element={<FormValidation />} />
+                <Route path="/form/wizard" element={<FormWizard />} />
+                <Route path="/form/layout" element={<Formlayout />} />
+                <Route path="/form/plugins" element={<Formplugins />} />
+                <Route path="/form/reactTable" element={<FormReactTable />} />
+                <Route path="/form/muiTable" element={<FormMuiTable />} />
 
                 {/* Charts & Map */}
-                <Route path='/chart/charts' element={<ChartCharts />} />
-                <Route path='/chart/map' element={<ChartMap />} />
+                <Route path="/chart/charts" element={<ChartCharts />} />
+                <Route path="/chart/map" element={<ChartMap />} />
 
                 {/* Pages */}
                 <Route
-                  path='/pages/authentication'
+                  path="/pages/authentication"
                   element={<PageAuthentication />}
                 />
                 <Route
-                  path='/pages/maintenance'
+                  path="/pages/maintenance"
                   element={<PageMaintenance />}
                 />
-                <Route path='/pages/contactUs' element={<PageContactUs />} />
-                <Route path='/pages/pricing' element={<Pagepricing />} />
+                <Route path="/pages/contactUs" element={<PageContactUs />} />
+                <Route path="/pages/pricing" element={<Pagepricing />} />
               </Routes>
             </div>
           </div>
