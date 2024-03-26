@@ -1,22 +1,54 @@
-import { useEffect, useState } from "react";
 import { Header } from "../components";
+import { MyTable, SortableTable } from "../components/Ya Components/DataGrid";
+
+import { inConfig } from "../components/Ya Components/DataGrid/MyTable";
 // import productData from '../data/MOCK_DATA'
 // import axios from 'axios'
 
-const YaReactDataGrid = () => {
-  const [data, setData] = useState([]);
+export type tyFruit = {
+  name: string;
+  color: string;
+  score: number;
+};
 
-  // useEffect(() => {
-  //   setData(productData)
-  // },[])
-  console.log(data);
+const data: tyFruit[] = [
+  { name: "orange", color: "bg-orange-500", score: 5 },
+  { name: "apple", color: "bg-red-500", score: 4 },
+  { name: "banana", color: "bg-yellow-500", score: 7 },
+  { name: "lime", color: "bg-green-500", score: 1 },
+];
+
+const config: inConfig[] = [
+  {
+    label: "name",
+    render: (fruit: tyFruit) => fruit.name,
+    sortValue: (fruit: tyFruit) => fruit.name,
+  },
+  {
+    label: "color",
+    render: (fruit: tyFruit) => (
+      <div className={`p-3 m-2 ${fruit.color}`}></div>
+    ),
+  },
+  {
+    label: "score",
+    render: (fruit: tyFruit) => fruit.score,
+    sortValue: (fruit: tyFruit) => fruit.score,
+    header: () => (
+      <th onClick={() => {}} className='bg-red-500'>
+        score
+      </th>
+    ),
+  },
+];
+
+const YaReactDataGrid = () => {
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category={"YaAcademy"} title={"DataGrid"} />
-      <table>
-        <thead></thead>
-        <tbody></tbody>
-      </table>
+
+      {/* <MyTable data={data} config={config} /> */}
+      <SortableTable data={data} config={config} />
     </div>
   );
 };
