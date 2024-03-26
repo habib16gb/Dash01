@@ -6,10 +6,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateContext } from "./contexts/ContextsProvider";
 import {
   AnalyticsDashboard,
+  ApplicationChat,
   Components,
   DefaultDashboard,
   WidgetChart,
   WidgetData,
+  ApplicationCalendar,
+  ApplicationKanban,
+  ApplicationCustomerList,
+  ApplicationCustomerCards,
+  ApplicationInvoiceCreate,
+  ApplicationInvoiceDetails,
+  ApplicationInvoiceList,
+  ApplicationInvoiceEdit,
+  ApplicationProfileUserProfile,
+  ApplicationProfileAccountProfile,
+  ApplicationECommerceProductDetails,
+  ApplicationECommerceProducts,
+  ApplicationECommerceProductList,
+  ApplicationECommerceAddNew,
+  ApplicationECommerceCheckout
+
 } from "./pages";
 import WidgetStatistics from "./pages/WidgetStatistics";
 
@@ -73,6 +90,27 @@ const App = () => {
               <Route path='/widget/chart' element={<WidgetChart />} />
 
               {/* Applications */}
+              <Route path="/apps/chat" element={<ApplicationChat />} />
+              <Route path="/apps/calendar" element={<ApplicationCalendar />} />
+              <Route path="/apps/kanban" element={<ApplicationKanban />} />
+
+              {/* Application Customer */}
+              <Route path="/apps/customer/list" element={<ApplicationCustomerList />} />
+              <Route path="/apps/customer/cards" element={<ApplicationCustomerCards />} />
+              {/* Application Invoice */}
+              <Route path="/apps/invoice/create" element={<ApplicationInvoiceCreate />} />
+              <Route path="/apps/invoice/details" element={<ApplicationInvoiceDetails />} />
+              <Route path="/apps/invoice/list" element={<ApplicationInvoiceList />} />
+              <Route path="/apps/invoice/edit" element={<ApplicationInvoiceEdit />} />
+              {/* Application Profile */}
+              <Route path="/apps/profile/user profile" element={<ApplicationProfileUserProfile />} />
+              <Route path="/apps/profile/account profile" element={<ApplicationProfileAccountProfile />} />          
+              {/* Application E-Commerce */}
+              <Route path="/apps/e-commerce/products" element={<ApplicationECommerceProducts />} />
+              <Route path="/apps/e-commerce/product details" element={<ApplicationECommerceProductDetails />} />
+              <Route path="/apps/e-commerce/product list" element={<ApplicationECommerceProductList />} />
+              <Route path="/apps/e-commerce/add new product" element={<ApplicationECommerceAddNew />} />
+              <Route path="/apps/e-commerce/checkout" element={<ApplicationECommerceCheckout />} />
             </Routes>
           </div>
         </div>

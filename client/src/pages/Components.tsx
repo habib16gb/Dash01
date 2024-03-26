@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { Header } from "../components";
 
-const Components = props => {
+const Components = () => {
   return (
-    <div>Components</div>
-  )
-}
-
-Components.propTypes = {}
+    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+      <Header category={"dashboard"} title={"Components"} />
+      Components Page
+    </div>
+  );
+};
 
 export default Components

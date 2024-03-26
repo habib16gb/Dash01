@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { Header } from "../components";
 
-const ApplicationKanban = props => {
+const ApplicationKanban = () => {
   return (
-    <div>ApplicationKanban</div>
-  )
-}
-
-ApplicationKanban.propTypes = {}
+    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+      <Header category={"Application"} title={"Kanban"} />
+      Application Kanban page
+    </div>
+  );
+};
 
 export default ApplicationKanban

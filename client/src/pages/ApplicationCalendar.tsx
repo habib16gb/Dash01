@@ -1,12 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { Header } from "../components";
 
-const ApplicationCalendar = props => {
+const ApplicationCalendar = () => {
   return (
-    <div>ApplicationCalendar</div>
-  )
-}
-
-ApplicationCalendar.propTypes = {}
+    <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
+      <Header category={"Application"} title={"Calendar"} />
+      Application Calendar page
+    </div>
+  );
+};
 
 export default ApplicationCalendar
