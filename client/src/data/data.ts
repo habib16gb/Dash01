@@ -7,6 +7,7 @@ import { GiChart } from "react-icons/gi";
 import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { MdOutlineCalendarMonth, MdOutlineShoppingCart } from "react-icons/md";
 import { PiKanbanLight } from "react-icons/pi";
+import { FaReact } from "react-icons/fa";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 
@@ -50,6 +51,20 @@ export const links: inNavbar[] = [
     ],
   },
   {
+    title: "YacineAcademy exercices",
+    links: [
+      {
+        name: "react js",
+        icon: FaReact,
+        path: '/ya/react',
+        children: [
+          {name: "tree"},
+          {name: "grid table"}
+        ]
+      }
+    ]
+  },
+  {
     title: "widgets",
 
     links: [
@@ -73,6 +88,18 @@ export const links: inNavbar[] = [
   {
     title: "application",
     links: [
+      {
+        name: "e-commerce",
+        icon: MdOutlineShoppingCart,
+        path: "/apps/e-commerce",
+        children: [
+          { name: "products" },
+          { name: "product details" },
+          { name: "product list" },
+          { name: "add new product" },
+          { name: "checkout" },
+        ],
+      },
       {
         name: "chat",
         icon: IoChatboxEllipsesOutline,
@@ -116,18 +143,7 @@ export const links: inNavbar[] = [
         path: "/apps/profile",
         children: [{ name: "user profile" }, { name: "account profile" }],
       },
-      {
-        name: "e-commerce",
-        icon: MdOutlineShoppingCart,
-        path: "/apps/e-commerce",
-        children: [
-          { name: "products" },
-          { name: "product details" },
-          { name: "product list" },
-          { name: "add new product" },
-          { name: "checkout" },
-        ],
-      },
+      
     ],
   },
 ];

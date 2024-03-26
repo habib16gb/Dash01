@@ -58,7 +58,7 @@ const Sidebar = () => {
                       >
                         <div className='flex items-center gap-5'>
                           <link.icon />
-                          <span>{link.name}</span>
+                          <span className="capitalize">{link.name}</span>
                         </div>
                         {isExpended ? <IoIosArrowUp /> : <IoIosArrowDown />}
                       </div>

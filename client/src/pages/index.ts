@@ -34,3 +34,5 @@ export { default as WidgetData } from "./WidgetData";
 export { default as WedgetStatistics } from "./WidgetStatistics";
 export { default as Orders } from "./Orders";
 export { default as RootPage } from "./RootPage";
+export { default as YaReactTree } from "./YaReactTree";
+export { default as YaReactDataGrid } from "./YaReactDataGrid";

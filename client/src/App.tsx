@@ -7,6 +7,8 @@ import { useStateContext } from "./contexts/ContextsProvider";
 import {
   AnalyticsDashboard,
   ApplicationChat,
+  YaReactDataGrid,
+  YaReactTree,
   Components,
   DefaultDashboard,
   WidgetChart,
@@ -83,6 +85,10 @@ const App = () => {
                 element={<AnalyticsDashboard />}
               />
               <Route path='/components' element={<Components />} />
+
+              {/* Yacine Acedemy */}
+              <Route path='/ya/react/tree' element={<YaReactTree />} />
+              <Route path='/ya/react/grid table' element={<YaReactDataGrid />} />
 
               {/* Widgets */}
               <Route path='/widget/statistics' element={<WidgetStatistics />} />
