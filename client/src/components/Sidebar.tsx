@@ -11,6 +11,7 @@ import { useState } from "react";
 
 const Sidebar = () => {
   const [expendedIndex, setExpendecIndex] = useState(-1);
+
   const { activeMenu, setActiveMenu, screenSize } = useStateContext();
 
   const handleCloseSidebar = () => {
@@ -58,7 +59,7 @@ const Sidebar = () => {
                       >
                         <div className='flex items-center gap-5'>
                           <link.icon />
-                          <span className="capitalize">{link.name}</span>
+                          <span className='capitalize'>{link.name}</span>
                         </div>
                         {isExpended ? <IoIosArrowUp /> : <IoIosArrowDown />}
                       </div>
