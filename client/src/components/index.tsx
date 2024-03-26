@@ -11,3 +11,6 @@ export { default as Chat } from "./Chat";
 export { default as Header } from "./Header";
 export { default as NavBtn } from "./NavBtn";
 export { default as ThemeSettings } from "./ThemeSettings";
+export { default as SideLink } from "./SideLink";
+export { default as SideLinkChild } from "./SideLinkChild";
+export { default as Accordion } from "./Accordion";
