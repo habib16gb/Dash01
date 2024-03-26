@@ -22,7 +22,7 @@ const SideLink = ({ link, onClick }: Props) => {
         isActive ? { backgroundColor: currentColor } : {}
       }
       className={({ isActive }) => (isActive ? activeLink : inactiveLink)}
-      to={link.name}
+      to={link.path}
     >
       <link.icon />
       <span className='capitalize'>{link.name}</span>

@@ -1,12 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+const AnalyticsDashboard = () => {
+  return <div>AnalyticsDashboard</div>;
+};
 
-const AnalyticsDashboard = props => {
-  return (
-    <div>AnalyticsDashboard</div>
-  )
-}
-
-AnalyticsDashboard.propTypes = {}
-
-export default AnalyticsDashboard
+export default AnalyticsDashboard;

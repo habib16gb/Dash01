@@ -23,6 +23,7 @@ export type tyChildrenLink = {
 export type tyLink = {
   name: string;
   icon: IconType;
+  path: string;
   children?: tyChildrenLink[];
 };
 
@@ -33,54 +34,64 @@ export interface inNavbar {
 
 export const links: inNavbar[] = [
   {
-    title: "Dashboard",
+    title: "dashboard",
     links: [
       {
-        name: "Dashboard",
+        name: "dashboard",
         icon: AiOutlineDashboard,
-        children: [{ name: "Default" }, { name: "Analytics" }],
+        path: "/dashboard",
+        children: [{ name: "default" }, { name: "analytics" }],
       },
       {
-        name: "Components",
+        name: "components",
         icon: TbComponents,
+        path: "/components",
       },
     ],
   },
   {
     title: "widgets",
+
     links: [
       {
-        name: "Statistics",
+        name: "statistics",
         icon: FcStatistics,
+        path: "/widget/statistics",
       },
       {
-        name: "Data",
+        name: "data",
         icon: CiDatabase,
+        path: "/widget/data",
       },
       {
-        name: "Chart",
+        name: "chart",
         icon: GiChart,
+        path: "/widget/chart",
       },
     ],
   },
   {
-    title: "Applicationa",
+    title: "application",
     links: [
       {
-        name: "Chat",
+        name: "chat",
         icon: IoChatboxEllipsesOutline,
+        path: "/apps/chat",
       },
       {
-        name: "Calendar",
+        name: "calendar",
         icon: MdOutlineCalendarMonth,
+        path: "/apps/calendar",
       },
       {
-        name: "Kanban",
+        name: "kanban",
         icon: PiKanbanLight,
+        path: "/apps/kanban",
       },
       {
-        name: "Customer",
+        name: "customer",
         icon: RiCustomerServiceLine,
+        path: "/apps/customer",
         children: [
           { name: "list", icon: CiSquarePlus },
           {
@@ -89,8 +100,9 @@ export const links: inNavbar[] = [
         ],
       },
       {
-        name: "Invoice",
+        name: "invoice",
         icon: AiOutlineDashboard,
+        path: "/apps/invoice",
         children: [
           { name: "create" },
           { name: "details" },
@@ -99,13 +111,15 @@ export const links: inNavbar[] = [
         ],
       },
       {
-        name: "Profile",
+        name: "profile",
         icon: CgProfile,
+        path: "/apps/profile",
         children: [{ name: "user profile" }, { name: "account profile" }],
       },
       {
-        name: "E-commerce",
+        name: "e-commerce",
         icon: MdOutlineShoppingCart,
+        path: "/apps/e-commerce",
         children: [
           { name: "products" },
           { name: "product details" },

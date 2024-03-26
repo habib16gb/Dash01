@@ -45,10 +45,10 @@ const Sidebar = () => {
             </Tooltip>
           </div>
           <div className='mt-10'>
-            {links.map((link, index) => (
+            {links.map(({ links, title }, index) => (
               <div key={index}>
-                <p className='text-gray-400 m-3 mt4 capitalize'>{link.title}</p>
-                {link.links.map((link, index) => {
+                <p className='text-gray-400 m-3 mt4 capitalize'>{title}</p>
+                {links.map((link, index) => {
                   const isExpended = index === expendedIndex;
                   return link.children ? (
                     <div key={index}>
@@ -69,6 +69,7 @@ const Sidebar = () => {
                               onClick={handleCloseSidebar}
                               key={index}
                               link={el}
+                              path={link.path}
                             />
                           ))}
                       </div>
