@@ -8,12 +8,12 @@ export interface inConfig {
   header?: () => ReactNode;
 }
 
-interface Props {
+export interface PropsMyTable {
   data: tyFruit[];
   config: inConfig[];
 }
 
-const MyTable = ({ data, config }: Props) => {
+const MyTable = ({ data, config }: PropsMyTable) => {
   return (
     <table className=' table-auto border-spacing-2'>
       <thead>

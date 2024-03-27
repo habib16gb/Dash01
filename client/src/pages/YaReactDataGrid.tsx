@@ -1,5 +1,5 @@
 import { Header } from "../components";
-import { MyTable, SortableTable } from "../components/Ya Components/DataGrid";
+import { SortableTable } from "../components/Ya Components/DataGrid";
 
 import { inConfig } from "../components/Ya Components/DataGrid/MyTable";
 // import productData from '../data/MOCK_DATA'
@@ -39,6 +39,11 @@ const config: inConfig[] = [
         score
       </th>
     ),
+  },
+  {
+    label: "score squared",
+    render: (fruit) => fruit.score ** 2,
+    sortValue: (fruit) => fruit.score ** 2,
   },
 ];
 
